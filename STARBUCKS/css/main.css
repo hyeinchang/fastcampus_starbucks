@@ -326,8 +326,15 @@ header .badges .badge {
 }
 .notice .notice-line .inner_left .swiper-container {
   height: 62px;
-  background-color: orange;
   flex-grow: 1; /* flex container에 공간이 남을 경우 flex item의 flex-basis 크기가 얼마나 더 할당 가능한지 나타내는 속성(기본값 0) */
+}
+.notice .notice-line .inner_left .swiper-container .swiper-slide {
+  height: 62px;
+  display: flex;
+  align-items: center;
+}
+.notice .notice-line .inner_left .swiper-container .swiper-slide a {
+  color: #fff;
 }
 .notice .notice-line .inner_left .notice-line__more {
   width: 62px;
@@ -361,4 +368,80 @@ header .badges .badge {
 }
 .notice .notice-line .inner_right .toggle-promotion .material-icons {
   font-size: 30px;
+}
+.notice .promotion  {
+  height: 693px;
+  background-color: #f6f5ef;
+  position: relative;
+}
+.notice .promotion .swiper-container {
+  width: calc(819px * 3 + 20px);
+  height: 553px;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: calc((819px * 3 + 20px) / -2);
+}
+.notice .promotion .swiper-slide {
+  opacity: .5;
+  transition: opacity 1s;
+  position: relative;
+}
+.notice .promotion .swiper-slide-active {
+  opacity: 1;
+}
+.notice .promotion .swiper-slide .btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.notice .promotion .swiper-pagination {
+  bottom: 40px;
+  left: 0;
+  right: 0;
+}
+.notice .promotion .swiper-pagination .swiper-pagination-bullet {
+  background-color: transparent;
+  background-image: url(../images/promotion_slide_pager.png);
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  outline: none;
+}
+.notice .promotion .swiper-pagination .swiper-pagination-bullet:last-child {
+  margin-right: 0;
+}
+.notice .promotion .swiper-pagination .swiper-pagination-bullet-active {
+  background-image: url(../images/promotion_slide_pager_on.png);
+}
+.notice .promotion .swiper-prev,
+.notice .promotion .swiper-next {
+  width: 42px;
+  height: 42px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  position: absolute;
+  top: 300px;
+  z-index: 1;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .4s;
+}
+.notice .promotion .swiper-prev {
+  left: 50%;
+  margin-left: -480px;
+}
+.notice .promotion .swiper-next {
+  right: 50%;
+  margin-right: -480px;
+}
+.notice .promotion .swiper-prev:hover,
+.notice .promotion .swiper-next:hover {
+  background-color: #333;
+  color: #fff;
 }
